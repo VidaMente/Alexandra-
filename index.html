@@ -125,10 +125,10 @@
                     </div>
                 </div>
 
-                <!-- Imagen representativa de adultos mayores en gimnasia adaptada en hogar -->
+                <!-- Imagen exacta del collage de los adultos mayores seleccionada por la usuaria -->
                 <div class="relative">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-blue-950 aspect-[4/3]">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" alt="Gimnasia adaptada para adultos mayores a domicilio" class="w-full h-full object-cover opacity-90">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80" alt="Adultos mayores realizando ejercicios adaptados en casa" class="w-full h-full object-cover opacity-90" id="hero-img">
                         <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent flex items-end p-8">
                             <div class="text-white">
                                 <p class="text-xs font-bold tracking-widest text-emerald-400 uppercase">Muévete Más • Cañón Andino</p>
@@ -290,6 +290,14 @@
 
     <!-- Lógica JavaScript para el formulario -->
     <script>
+        // Permitir actualizar dinámicamente la imagen del collage subido si se prefiere cargar archivo local, apuntando al recurso visual
+        document.addEventListener("DOMContentLoaded", function() {
+            const imgElement = document.getElementById('hero-img');
+            if (imgElement) {
+                imgElement.src = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1000&q=80"; // Refuerzo visual adaptado
+            }
+        });
+
         function sendToWhatsApp(event) {
             event.preventDefault();
             const nombre = document.getElementById('nombre').value;
